@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&family=Roboto:wght@400;500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f8f8f8; /* Light gray background for the body */
+    color: #333
+}
+
+:root {
+    --primary-text-color: #183b56;
+    --secondary-text-color: #577592;
+    --accent-color: #2294ed;
+    --accent-color-dark: #1d69a3;
+}
+
+nav{
+    justify-content: space-between;
+    position: fixed;
+    width: 100vw;
+    height: 10vh;
+    padding: 0 3vw;
+    font-family: 'Poppins', sans-serif;
+    background-color: #4286f5; 
+    color: #fff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .5)
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}   
+
+.logo a{
+    font-size: 1.5rem;
+    font-weight:900;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, .5)
+}
+
+.topic-elements{
+    list-style: none;
+    justify-content: space-between;
+    width: 30vw;
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+}
+
+.hover-topics{
+    transition: color 0.3s ease;
+}
+
+.hover-topics.active{
+    color: orange;
+}
+
+.hover-topics:not(.active):hover{
+    cursor: pointer;
+    color: black;
+}
+
+.input-search{
+    width: 20vw;
+    justify-content: space-between;
+    height: 50%;
+}
+
+input{
+    width: 60%;
+    height: 90%;
+    border-radius: 4px;
+    padding: 5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+button{
+    width: 30%;
+    height: 90%;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+}
+
+input,button:hover{
+    cursor: pointer;
+    background-color: #f8f8f8;
+}
+
+.inputStyle{
+    outline: none;
+    border: none;
+}
+
