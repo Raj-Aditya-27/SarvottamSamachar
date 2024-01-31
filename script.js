@@ -23,7 +23,7 @@ search.addEventListener('click', () => {
             handleSearch();
             fetchNews(inputValue);
         }
-        catch(e){
+        catch (e) {
             console.log("invalid input");
         }
     }
@@ -91,12 +91,12 @@ async function show(data) {
             </div>
             <div class="card-content flex">
                 <h3 id="news-title">${data[i].title}</h3>
-                <h6 class="news-source" id="news-source">${date}</h6>
+                <h6 class="news-source" id="news-source">${data[i].source.name} - ${date}</h6>
                 <p class="news-desc" id="news-desc">${truncatedDescription}</p>
             </div>`;
-            
-            card.firstElementChild.addEventListener('click',()=>{
-                window.open(data[i].url,"_blank");
+
+            card.firstElementChild.addEventListener('click', () => {
+                window.open(data[i].url, "_blank");
             })
             cardContainer.appendChild(card);
         }
@@ -112,7 +112,7 @@ function handleImageError(imgElement) {
     }
 }
 
-//Topics in navbar
+//Topics in navbar handling click
 const newsTopic = document.querySelectorAll(".topic-elements li");
 newsTopic.forEach(topic => {
     const cardContainer = document.querySelector(".cards-container");
@@ -123,3 +123,24 @@ newsTopic.forEach(topic => {
 
 
 
+window.onscroll = function () {
+    showScrollToTopButton();
+};
+
+// Function to show or hide the scroll-to-top button
+function showScrollToTopButton() {
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+}
+
+// Function to scroll to the top of the page
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
