@@ -139,8 +139,17 @@ function showScrollToTopButton() {
 
 // Function to scroll to the top of the page
 function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+}
+
+//Menu button
+function showSidebar(){
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display="flex";
+}
+
+function hideSidebar(){
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display="none";
 }

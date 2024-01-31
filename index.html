@@ -14,17 +14,35 @@
         <div class="logo">
             <a href="#">SarvottamSamachar</a>
         </div>
+
         <div class="topics flex">
-            <ul class="topic-elements flex">
+            <ul class="topic-elements flex specialNavbar">
                 <li class="hover-topics" onclick="changeColor(this)">Bollywood</li>
                 <li class="hover-topics" onclick="changeColor(this)">Cricket</li>
                 <li class="hover-topics" onclick="changeColor(this)">Finance</li>
                 <li class="hover-topics" onclick="changeColor(this)">Politics</li>
             </ul>
         </div>
+
+        <div class="topics flex sidebar">
+            <div class="close" onclick="hideSidebar()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </div>
+            <ul class="topic-elements">
+                <li class="hover-topics" onclick="changeColor(this)">Bollywood</li>
+                <li class="hover-topics" onclick="changeColor(this)">Cricket</li>
+                <li class="hover-topics" onclick="changeColor(this)">Finance</li>
+                <li class="hover-topics" onclick="changeColor(this)">Politics</li>
+            </ul>
+        </div>
+
         <div class="input-search flex">
-            <input type="text" class="input-box inputStyle" placeholder="Example: India">
+            <input type="text" class="input-box inputStyle" placeholder="e.g: India">
             <button class="inputStyle" type="submit" id="searchButton">Search</button>
+        </div>
+
+        <div class="menu" onclick="showSidebar()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
         </div>
     </nav>
 
