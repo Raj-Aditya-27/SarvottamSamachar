@@ -16,7 +16,18 @@ function changeColor(element) {
 }
 
 const search = document.getElementById('searchButton');
-search.addEventListener('click', handleSearch);
+search.addEventListener('click', () => {
+    const inputValue = document.querySelector(".input-box").value.toLowerCase();
+    if (inputValue) {
+        try {
+            handleSearch();
+            fetchNews(inputValue);
+        }
+        catch(e){
+            console.log("invalid input");
+        }
+    }
+});
 
 //function to handle Search button click
 function handleSearch() {
@@ -45,7 +56,6 @@ async function fetchNews(query) {
     try {
         const response = await fetch(`${url}${query}&apikey=${API_KEY}`);
         const data = await response.json();
-        console.log(data.articles);
         show(data.articles);
     }
     catch (e) {
@@ -62,6 +72,7 @@ function limitWords(text, limit) {
 async function show(data) {
     const cardContainer = document.querySelector(".cards-container");
     const size = data.length;
+    cardContainer.innerHTML = "";
 
     for (let i = 0; i < size; i++) {
         const card = document.createElement('div');
@@ -70,6 +81,9 @@ async function show(data) {
         // Check if image URL is provided and handle errors
         if (data[i].urlToImage) {
             const truncatedDescription = limitWords(data[i].description, 30);
+            const date = new Date(data[i].publishedAt).toLocaleString("en-US", {
+                timeZone: "Asia/Jakarta"
+            });
 
             card.innerHTML = `
             <div class="card-header">
@@ -77,10 +91,13 @@ async function show(data) {
             </div>
             <div class="card-content flex">
                 <h3 id="news-title">${data[i].title}</h3>
-                <h6 class="news-source" id="news-source">${data[i].publishedAt}</h6>
+                <h6 class="news-source" id="news-source">${date}</h6>
                 <p class="news-desc" id="news-desc">${truncatedDescription}</p>
             </div>`;
-
+            
+            card.firstElementChild.addEventListener('click',()=>{
+                window.open(data[i].url,"_blank");
+            })
             cardContainer.appendChild(card);
         }
     }
@@ -94,3 +111,15 @@ function handleImageError(imgElement) {
         card.remove();
     }
 }
+
+//Topics in navbar
+const newsTopic = document.querySelectorAll(".topic-elements li");
+newsTopic.forEach(topic => {
+    const cardContainer = document.querySelector(".cards-container");
+    topic.addEventListener('click', (e) => {
+        fetchNews(e.target.innerText);
+    })
+})
+
+
+
