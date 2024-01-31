@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SarvottamSamachar: Your Source of Supreme News</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <nav class="nav-container flex">
@@ -27,71 +29,25 @@
     </nav>
 
     <main>
-        <div class="cards-container container flex">
-            <div class="card">
-                <div class="card-header">
-                    <img src="https://via.placeholder.com/400x200" alt="new-image">
-                </div>
-                <div class="card-content flex">
-                    <h3 id="news-title">This is a title.</h3>
-                    <h6 class="news-source" id="news-source">BBC 30/01/24</h6>
-                    <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla suscipit doloremque sunt obcaecati nihil tenetur, itaque odio incidunt minus molestias iure doloribus vitae voluptate soluta a temporibus assumenda, quam ad.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <img src="https://via.placeholder.com/400x200" alt="new-image">
-                </div>
-                <div class="card-content flex">
-                    <h3 id="news-title">This is a title.</h3>
-                    <h6 class="news-source" id="news-source">BBC 30/01/24</h6>
-                    <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla suscipit doloremque sunt obcaecati nihil tenetur, itaque odio incidunt minus molestias iure doloribus vitae voluptate soluta a temporibus assumenda, quam ad.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <img src="https://via.placeholder.com/400x200" alt="new-image">
-                </div>
-                <div class="card-content flex">
-                    <h3 id="news-title">This is a title.</h3>
-                    <h6 class="news-source" id="news-source">BBC 30/01/24</h6>
-                    <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla suscipit doloremque sunt obcaecati nihil tenetur, itaque odio incidunt minus molestias iure doloribus vitae voluptate soluta a temporibus assumenda, quam ad.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <img src="https://via.placeholder.com/400x200" alt="new-image">
-                </div>
-                <div class="card-content flex">
-                    <h3 id="news-title">This is a title.</h3>
-                    <h6 class="news-source" id="news-source">BBC 30/01/24</h6>
-                    <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla suscipit doloremque sunt obcaecati nihil tenetur, itaque odio incidunt minus molestias iure doloribus vitae voluptate soluta a temporibus assumenda, quam ad.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <img src="https://via.placeholder.com/400x200" alt="new-image">
-                </div>
-                <div class="card-content flex">
-                    <h3 id="news-title">This is a title.</h3>
-                    <h6 class="news-source" id="news-source">BBC 30/01/24</h6>
-                    <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla suscipit doloremque sunt obcaecati nihil tenetur, itaque odio incidunt minus molestias iure doloribus vitae voluptate soluta a temporibus assumenda, quam ad.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <img src="https://via.placeholder.com/400x200" alt="new-image">
-                </div>
-                <div class="card-content flex">
-                    <h3 id="news-title">This is a title.</h3>
-                    <h6 class="news-source" id="news-source">BBC 30/01/24</h6>
-                    <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla suscipit doloremque sunt obcaecati nihil tenetur, itaque odio incidunt minus molestias iure doloribus vitae voluptate soluta a temporibus assumenda, quam ad.</p>
-                </div>
-            </div>
-            
-        </div>
+        <div class="cards-container container flex"></div>
     </main>
+
+    <template id="card-template">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="new-image">
+            </div>
+            <div class="card-content flex">
+                <h3 id="news-title">This is a title.</h3>
+                <h6 class="news-source" id="news-source">BBC 30/01/24</h6>
+                <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                    suscipit doloremque sunt obcaecati nihil tenetur, itaque odio incidunt minus molestias iure
+                    doloribus vitae voluptate soluta a temporibus assumenda, quam ad.</p>
+            </div>
+        </div>
+    </template>
 
     <script src="script.js"></script>
 </body>
+
 </html>
