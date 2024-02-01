@@ -59,7 +59,7 @@ async function fetchNews(query) {
         show(data.articles);
     }
     catch (e) {
-        console("Error news: ", e);
+        console.log("Error news: ", e);
     }
 }
 
