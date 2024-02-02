@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SarvottamSamachar: Your Source of Supreme News</title>
+    <title>Sarvottam Samachar: Your Source of Supreme News</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,7 +12,7 @@
     <!-- nav -->
     <nav class="nav-container flex">
         <div class="logo">
-            <a href="#">SarvottamSamachar</a>
+            <a href="#">Sarvottam Samachar</a>
         </div>
 
         <div class="topics flex">
@@ -40,8 +40,8 @@
         </div>
 
         <div class="input-search flex">
-            <input type="text" class="input-box inputStyle" placeholder="e.g: India">
-            <button class="inputStyle" type="submit" id="searchButton">🔍</button>
+            <input type="text" class="input-box inputStyle"  id="searchInput" onclick="giveAlert()" placeholder="e.g: Technology">
+            <button class="inputStyle" type="submit" id="searchButton" onclick="search()">🔍</button>
         </div>
 
         <div class="menu" onclick="showSidebar()">
