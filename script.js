@@ -508,6 +508,13 @@ const defaultNews = [
     }
 ]
 
+// const bollywood =
+// const cricket = 
+// const politics =
+// const finance = 
+// const technology =
+// const nature = 
+
 function removeActiveClass() {
     const allTopics = document.querySelectorAll(".hover-topics");
     //Remove active class from all li elements
@@ -541,15 +548,29 @@ function changeColor(element) {
 // });
 
 function search() {
-    const inputValue = document.querySelector(".input-box").value.toLowerCase();
-    if (inputValue) {
-        try {
+
+   let validInput = 0;
+
+   const inputValue = document.querySelector(".input-box").value.toLowerCase().trim();
+    //check if any inputValue matching li elements inner text
+    const allTopics = document.querySelectorAll(".hover-topics");
+    allTopics.forEach(function (element) {
+        const elementText = element.innerText.toLowerCase();
+        if (elementText === inputValue) {
+            element.classList.add('active');
             handleSearch();
             fetchNews(inputValue);
+            validInput = 1;
         }
-        catch (e) {
-            console.error("invalid input");
-        }
+    });
+
+    if (inputValue === "technology" || inputValue === "nature") {
+        handleSearch();
+        fetchNews(inputValue);
+        validInput = 1;
+    }
+    if(!validInput){
+        alert("Invalid Input.");
     }
 }
 
@@ -558,7 +579,7 @@ function handleSearch() {
     removeActiveClass();
 
     //Get input value
-    const inputValue = document.querySelector(".input-box").value.toLowerCase();
+    const inputValue = document.querySelector(".input-box").value.toLowerCase().trim();
 
     //check if any inputValue matching li elements inner text
     const allTopics = document.querySelectorAll(".hover-topics");
@@ -603,7 +624,7 @@ function fetchNews(query) {
 
 //taking only number of words within limit given
 function limitWords(text, limit) {
-    console.log("yep");
+
     const words = text.split(' ');
     const truncatedWords = words.slice(0, limit);
     return truncatedWords.join(' ');
@@ -708,7 +729,7 @@ function giveAlert() {
     We appreciate your understanding.
 `;
 
-let mobileNote = `
+    let mobileNote = `
     Welcome to our news portal!
     This project covers news in Technology,
     Nature, Bollywood, Cricket,

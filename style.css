@@ -258,6 +258,10 @@ h6 {
         justify-content: center;
         column-gap: 2vw;
     }
+
+    main{
+        margin-top: 150px;
+    }
 }
 
 /* mobile phone */
