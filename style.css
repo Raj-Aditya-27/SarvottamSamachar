@@ -36,11 +36,12 @@ nav {
 }
 
 .logo a {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 500;
     color: #fff;
     text-decoration: none;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, .5)
+    text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+    border: 1px solid white;
 }
 
 .sidebar {
@@ -83,6 +84,7 @@ nav {
 
 .menu {
     display: none;
+    padding-top: 3px;
 }
 
 .close {
@@ -252,10 +254,6 @@ h6 {
         padding: 0 5%;
     }
 
-    .logo a {
-        font-size: 1.7rem;
-    }
-
     .cards-container{
         justify-content: center;
         column-gap: 2vw;
@@ -273,9 +271,6 @@ h6 {
         display: block;
     }
 
-    .logo a {
-        font-size: 1rem;
-    }
 
     nav {
         justify-content: space-evenly;
@@ -298,15 +293,19 @@ h6 {
     }
 
     input {
-        width: 75%;
+        width: 90%;
         height: 3vh;
         padding: 0 5%;
     }
 
     button.inputStyle {
-        width: 15%;
+        width: 0%;
         height: 3vh;
         border-radius: 5px;
     }
 
+    #searchButton{
+        display: none;
+    }
 }
+

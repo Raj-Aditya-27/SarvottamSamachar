@@ -661,8 +661,6 @@ newsTopic.forEach(topic => {
     })
 })
 
-
-
 window.onscroll = function () {
     showScrollToTopButton();
 };
@@ -696,7 +694,47 @@ function hideSidebar() {
 
 //input options
 function giveAlert() {
-    alert("Can only search for Technology or Nature as the API is not used.");
+    // Check the viewport width
+    let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+    let note = `
+    Welcome to our news portal!
+    This project covers news in Technology, Nature, Bollywood, Cricket,
+    Finance, and Politics.
+    
+    Due to constraints and the unavailability of a paid API key,
+    our search is limited to these categories.
+
+    We appreciate your understanding.
+`;
+
+let mobileNote = `
+    Welcome to our news portal!
+    This project covers news in Technology,
+    Nature, Bollywood, Cricket,
+    Finance, and Politics.
+    
+    Due to constraints and the unavailability of a 
+    paid API key,our search is limited to these 
+    categories.
+
+    We appreciate your understanding.
+
+    Enter your input:
+`;
+
+    // Use prompt for smaller devices and alert for larger devices
+    if (viewportWidth <= 599) {
+        var userInput = prompt(`${mobileNote}`);
+
+        // Check if the user entered something and assign it to the input field
+        if (userInput !== null) {
+            document.getElementById("searchInput").value = userInput;
+            search();
+        }
+    } else {
+        alert(`${note}`);
+    }
 }
 
 //enter key
