@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&family=Roboto:wght@400;500&display=swap');
 
+/* All html */
 * {
     padding: 0;
     margin: 0;
@@ -231,6 +232,7 @@ h6 {
 }
 
 /* Responsiveness */
+/* ipad */
 @media screen and (min-width:600px) and (max-width:1025px) {
     .specialNavbar {
         display: none;
@@ -260,6 +262,7 @@ h6 {
     }
 }
 
+/* mobile phone */
 @media screen and (min-width:300px) and (max-width:599px) {
     .specialNavbar {
         display: none;
