@@ -2647,31 +2647,23 @@ function giveAlert() {
     let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
 
     let note = `
-    Note:
     Welcome to our news portal!
-    This project covers news in Technology, war, Bollywood, Cricket,
-    Finance, and Politics.
     
     Due to constraints and the unavailability of a paid API key,
-    our search is limited to these categories.
-
-    We appreciate your understanding.
+    our search is limited to these categories - Technology, war, 
+    Bollywood, Cricket,Finance, and Politics.
 `;
 
     let mobileNote = `
-    Note:
     Welcome to our news portal!
-    This project covers news in Technology,
-    war, Bollywood, Cricket,
-    Finance, and Politics.
     
     Due to constraints and the unavailability of a 
     paid API key,our search is limited to these 
-    categories.
+    categories - Technology, war, Bollywood,
+    Cricket,Finance, and Politics.
 
-    We appreciate your understanding.
-
-    Enter your input:
+    Enter your input from above given
+    categories:
 `;
 
     // Use prompt for smaller devices and alert for larger devices
