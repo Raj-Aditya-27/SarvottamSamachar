@@ -1254,7 +1254,7 @@ const Cricket = [
         "content": "The Hostel Ground in Jammu hosted two games in the ongoing Ranji Trophy. In eight days, only 107.3 overs were bowled due to poor visibility. In the second round game between Jammu and Kashmir and Del… [+5615 chars]"
     }
 ]
-const Politics =[
+const Politics = [
     {
         "source": {
             "id": "bbc-news",
@@ -1830,7 +1830,7 @@ const Finance = [
         "content": "Michael Lewis is not interested in how or why people make mistakes.\r\nThis might be surprising, given the subject matter of his latest book. Going Infinite chronicles the rapid ascent of cryptocurrenc… [+32296 chars]"
     }
 ]
-const Technology =[
+const Technology = [
     {
         "source": {
             "id": "engadget",
@@ -2618,9 +2618,9 @@ window.onscroll = function () {
 function showScrollToTopButton() {
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollToTopBtn.style.display = "block";
+        scrollToTopBtn.classList.add("visible");
     } else {
-        scrollToTopBtn.style.display = "none";
+        scrollToTopBtn.classList.remove("visible");
     }
 }
 

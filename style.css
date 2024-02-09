@@ -188,7 +188,7 @@ h6 {
 .card:hover {
     box-shadow: 1px 1px 8px #d4ceff;
     background-color: #f9fdff;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
     cursor: pointer;
 }
 
@@ -211,7 +211,6 @@ h6 {
 
 /* Scroll to top button */
 #scrollToTopBtn {
-    display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -226,6 +225,15 @@ h6 {
     width: 50px;
     font-size: 1.5rem;
     text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+}
+
+#scrollToTopBtn.visible {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
 }
 
 #scrollToTopBtn:hover {
@@ -254,12 +262,12 @@ h6 {
         padding: 0 5%;
     }
 
-    .cards-container{
+    .cards-container {
         justify-content: center;
         column-gap: 2vw;
     }
 
-    main{
+    main {
         margin-top: 15vh;
     }
 }
@@ -282,7 +290,7 @@ h6 {
         padding: 0 1%;
     }
 
-    .cards-container{
+    .cards-container {
         justify-content: center;
     }
 
@@ -308,8 +316,7 @@ h6 {
         border-radius: 5px;
     }
 
-    #searchButton{
+    #searchButton {
         display: none;
     }
 }
-
