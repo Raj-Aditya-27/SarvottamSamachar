@@ -149,6 +149,7 @@ button.inputStyle:hover {
 .inputStyle {
     outline: none;
     border: none;
+    border-radius: 10px;
 }
 
 /* Cards */
@@ -320,3 +321,4 @@ h6 {
         display: none;
     }
 }
+
