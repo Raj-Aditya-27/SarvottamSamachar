@@ -26,10 +26,13 @@
 
         <div class="topics flex sidebar">
             <div class="close" onclick="hideSidebar()">
-                <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30">
-                    <path
-                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
-                </svg>
+                <img
+            width="34"
+            height="34"
+            src="https://img.icons8.com/fluency-systems-regular/24/FFFFFF/close-window.png"
+            alt="close-window"
+          />
+
             </div>
             <ul class="topic-elements">
                 <li class="hover-topics" onclick="changeColor(this),hideSidebar()">Bollywood</li>
@@ -42,13 +45,39 @@
         <div class="input-search flex">
             <input type="text" class="input-box inputStyle" id="searchInput" onclick="giveAlert()"
                 placeholder="Search">
-            <button class="inputStyle" type="submit" id="searchButton" onclick="search()">🔍</button>
+            <button class="inputStyle" type="submit" id="searchButton" onclick="search()">
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="30"
+                height="30"
+                viewBox="0 0 50 50"
+                style="fill: #ffffff"
+              >
+                <path
+                  d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"
+                ></path>
+              </svg>
+    
+            </button>
         </div>
 
         <div class="menu" onclick="showSidebar()">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-            </svg>
+            <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="28"
+          height="28"
+          viewBox="0 0 30 30"
+          style="fill: #ffffff"
+        >
+          <path
+            d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"
+          ></path>
+        </svg>
+
         </div>
     </nav>
 

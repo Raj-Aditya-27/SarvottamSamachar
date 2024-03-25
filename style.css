@@ -49,7 +49,7 @@ nav {
     top: 0;
     right: 0;
     height: 100vh;
-    width: 310px;
+    width: 50vw;
     display: none;
     justify-content: center;
     align-items: start;
@@ -57,8 +57,9 @@ nav {
     row-gap: 3vh;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
     backdrop-filter: blur(5px);
-    color: #4286f5;
+    color: #fff;
     padding: 5px;
+    background-color: #4286f5;
 }
 
 .sidebar ul li {
@@ -85,10 +86,10 @@ nav {
 .menu {
     display: none;
     padding-top: 3px;
+    margin-right: 15px;
 }
 
 .close {
-    border: 1px solid black;
     height: 30px;
     width: 30px;
     text-align: center;
@@ -117,13 +118,14 @@ nav {
 
 .hover-topics:not(.active):hover {
     cursor: pointer;
-    color: black;
+    color:black;
 }
 
 .input-search {
     width: 20vw;
     justify-content: space-evenly;
     height: 5vh;
+    align-items: center;
 }
 
 input {
@@ -134,22 +136,23 @@ input {
 }
 
 button.inputStyle {
-    width: 10%;
+    width: auto;
     height: 100%;
-    font-family: 'Poppins', sans-serif;
-    color: #000;
 }
 
 input,
 button.inputStyle:hover {
     cursor: pointer;
-    background-color: #f8f8f8;
+}
+
+button.inputStyle{
+    background-color: #4286f5;
 }
 
 .inputStyle {
     outline: none;
     border: none;
-    border-radius: 10px;
+    border-radius: 6px;
 }
 
 /* Cards */
