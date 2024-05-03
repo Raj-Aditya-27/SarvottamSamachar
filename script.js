@@ -2466,54 +2466,54 @@ function changeColor(element) {
 //     }
 // });
 
-function search() {
+// function search() {
 
-    let validInput = 0;
+//     let validInput = 0;
 
-    const inputValue = document.querySelector(".input-box").value.toLowerCase().trim();
-    //check if any inputValue matching li elements inner text
-    const allTopics = document.querySelectorAll(".hover-topics");
-    allTopics.forEach(function (element) {
-        const elementText = element.innerText.toLowerCase();
-        if (elementText === inputValue) {
-            element.classList.add('active');
-            handleSearch();
-            validInput = 1;
+//     const inputValue = document.querySelector(".input-box").value.toLowerCase().trim();
+//     //check if any inputValue matching li elements inner text
+//     const allTopics = document.querySelectorAll(".hover-topics");
+//     allTopics.forEach(function (element) {
+//         const elementText = element.innerText.toLowerCase();
+//         if (elementText === inputValue) {
+//             element.classList.add('active');
+//             handleSearch();
+//             validInput = 1;
 
-            if (inputValue === "bollywood") fetchNews(Bollywood);
-            else if (inputValue === "finance") fetchNews(Finance);
-            else if (inputValue === "cricket") fetchNews(Cricket);
-            else if (inputValue === "politics") fetchNews(Politics);
-        }
-    });
+//             if (inputValue === "bollywood") fetchNews(Bollywood);
+//             else if (inputValue === "finance") fetchNews(Finance);
+//             else if (inputValue === "cricket") fetchNews(Cricket);
+//             else if (inputValue === "politics") fetchNews(Politics);
+//         }
+//     });
 
-    if (inputValue === "technology" || inputValue === "war") {
-        handleSearch();
-        validInput = 1;
-        if (inputValue === "technology") fetchNews(Technology);
-        else fetchNews(War);
-    }
-    if (!validInput) {
-        alert("Invalid Input.");
-    }
-}
+//     if (inputValue === "technology" || inputValue === "war") {
+//         handleSearch();
+//         validInput = 1;
+//         if (inputValue === "technology") fetchNews(Technology);
+//         else fetchNews(War);
+//     }
+//     if (!validInput) {
+//         alert("Invalid Input.");
+//     }
+// }
 
 //function to handle Search button click
-function handleSearch() {
-    removeActiveClass();
+// function handleSearch() {
+//     removeActiveClass();
 
-    //Get input value
-    const inputValue = document.querySelector(".input-box").value.toLowerCase().trim();
+//     //Get input value
+//     const inputValue = document.querySelector(".input-box").value.toLowerCase().trim();
 
-    //check if any inputValue matching li elements inner text
-    const allTopics = document.querySelectorAll(".hover-topics");
-    allTopics.forEach(function (element) {
-        const elementText = element.innerText.toLowerCase();
-        if (elementText === inputValue) {
-            element.classList.add('active');
-        }
-    });
-}
+//     //check if any inputValue matching li elements inner text
+//     const allTopics = document.querySelectorAll(".hover-topics");
+//     allTopics.forEach(function (element) {
+//         const elementText = element.innerText.toLowerCase();
+//         if (elementText === inputValue) {
+//             element.classList.add('active');
+//         }
+//     });
+// }
 
 //Api key work
 // const API_KEY = "1d3a0eefa97b499d8fbc4ee93eeb40b7";
@@ -2625,10 +2625,23 @@ function showScrollToTopButton() {
 }
 
 // Function to scroll to the top of the page
+
 function scrollToTop() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    // Define how many pixels to scroll per frame
+    const scrollStep = -window.scrollY / (500 / 15); // Control the smoothness by changing '500' and '15'
+
+    // Define the animation function
+    function scrollAnimation() {
+        if (window.scrollY !== 0) {
+            window.scrollBy(0, scrollStep);
+            requestAnimationFrame(scrollAnimation);
+        }
+    }
+
+    // Start the animation
+    scrollAnimation();
 }
+
 
 //Menu button
 function showSidebar() {
@@ -2642,52 +2655,52 @@ function hideSidebar() {
 }
 
 //input options
-function giveAlert() {
-    // Check the viewport width
-    let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+// function giveAlert() {
+//     // Check the viewport width
+//     let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
 
-    let note = `
-    Welcome to our news portal!
+//     let note = `
+//     Welcome to our news portal!
     
-    Due to constraints and the unavailability of a paid API key,
-    our search is limited to these categories - Technology, war, 
-    Bollywood, Cricket,Finance, and Politics.
-`;
+//     Due to constraints and the unavailability of a paid API key,
+//     our search is limited to these categories - Technology, war, 
+//     Bollywood, Cricket,Finance, and Politics.
+// `;
 
-    let mobileNote = `
-    Welcome to our news portal!
+//     let mobileNote = `
+//     Welcome to our news portal!
     
-    Due to constraints and the unavailability of a 
-    paid API key,our search is limited to these 
-    categories - Technology, war, Bollywood,
-    Cricket,Finance, and Politics.
+//     Due to constraints and the unavailability of a 
+//     paid API key,our search is limited to these 
+//     categories - Technology, war, Bollywood,
+//     Cricket,Finance, and Politics.
 
-    Enter your input from above given
-    categories:
-`;
+//     Enter your input from above given
+//     categories:
+// `;
 
-    // Use prompt for smaller devices and alert for larger devices
-    if (viewportWidth <= 599) {
-        var userInput = prompt(`${mobileNote}`);
+//     // Use prompt for smaller devices and alert for larger devices
+//     if (viewportWidth <= 599) {
+//         var userInput = prompt(`${mobileNote}`);
 
-        // Check if the user entered something and assign it to the input field
-        if (userInput !== null) {
-            document.getElementById("searchInput").value = userInput;
-            search();
-        }
-    } else {
-        alert(`${note}`);
-    }
-}
+//         // Check if the user entered something and assign it to the input field
+//         if (userInput !== null) {
+//             document.getElementById("searchInput").value = userInput;
+//             search();
+//         }
+//     } else {
+//         alert(`${note}`);
+//     }
+// }
 
 //enter key
-const searchInput = document.getElementById("searchInput");
+// const searchInput = document.getElementById("searchInput");
 
 // Add event listener to input field
-searchInput.addEventListener("keydown", function (event) {
-    // Check if the pressed key is Enter
-    if (event.key === "Enter") {
-        // Trigger the search function
-        search();
-    }
-});
+// searchInput.addEventListener("keydown", function (event) {
+//     // Check if the pressed key is Enter
+//     if (event.key === "Enter") {
+//         // Trigger the search function
+//         search();
+//     }
+// });
