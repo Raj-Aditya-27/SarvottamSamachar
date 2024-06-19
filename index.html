@@ -17,10 +17,10 @@
 
         <div class="topics flex">
             <ul class="topic-elements flex specialNavbar">
-                <li class="hover-topics" onclick="changeColor(this)">Bollywood</li>
-                <li class="hover-topics" onclick="changeColor(this)">Cricket</li>
-                <li class="hover-topics" onclick="changeColor(this)">Finance</li>
-                <li class="hover-topics" onclick="changeColor(this)">Politics</li>
+                <li class="hover-topics" onclick="changeColor(this)">Entertainment</li>
+                <li class="hover-topics" onclick="changeColor(this)">Sports</li>
+                <li class="hover-topics" onclick="changeColor(this)">Business</li>
+                <li class="hover-topics" onclick="changeColor(this)">Technology</li>
             </ul>
         </div>
 
@@ -35,16 +35,17 @@
 
             </div>
             <ul class="topic-elements">
-                <li class="hover-topics" onclick="changeColor(this),hideSidebar()">Bollywood</li>
-                <li class="hover-topics" onclick="changeColor(this),hideSidebar()">Cricket</li>
-                <li class="hover-topics" onclick="changeColor(this),hideSidebar()">Finance</li>
-                <li class="hover-topics" onclick="changeColor(this),hideSidebar()">Politics</li>
+                <li class="hover-topics" onclick="changeColor(this),hideSidebar()">Entertainment</li>
+                <li class="hover-topics" onclick="changeColor(this),hideSidebar()">Sports</li>
+                <li class="hover-topics" onclick="changeColor(this),hideSidebar()">Business</li>
+                <li class="hover-topics" onclick="changeColor(this),hideSidebar()">Technology</li>
             </ul>
         </div>
 
-        <!-- <div class="input-search flex">
-            <input type="text" class="input-box inputStyle" id="searchInput" onclick="giveAlert()"
-                placeholder="Search">
+        <div class="input-search flex">
+            <input type="text" class="input-box inputStyle" id="searchInput" 
+                placeholder="Search"
+                title="Enter one of the following keywords: Business, Entertainment, General, Health, Science, Sports, Technology">
             <button class="inputStyle" type="submit" id="searchButton" onclick="search()">
                 <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +62,7 @@
               </svg>
     
             </button>
-        </div> -->
+        </div>
 
         <div class="menu" onclick="showSidebar()">
             <svg
@@ -106,6 +107,44 @@
     <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
 
     <script src="script.js"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 
 </html>
